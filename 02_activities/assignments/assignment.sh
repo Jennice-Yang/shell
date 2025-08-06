@@ -41,11 +41,9 @@ cp ./data/raw/server*.log data/processed/server_logs
 cp ./data/raw/user*.log data/processed/user_logs
 cp ./data/raw/event*.log data/processed/user_logs
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
-rm -i ./data/raw/*ipaddr ./data/processed/user_logs/*ipaddr
-y
+rm ./data/raw/*ipaddr ./data/processed/user_logs/*ipaddr
 # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
 ls -R ./*.log /data/processed >> ./data/inventory.txt
-
 ###########################################
 
 echo "Project setup is complete!"
